@@ -67,7 +67,7 @@ function onEachFeature(feature, layer) {
     });
 }
 
-
+//data box
 var info = L.control();
 
 info.onAdd = function (map) {
@@ -87,6 +87,26 @@ info.update = function (props) {
 };
 
 
+//legend
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 1, 2, 3, 4, 5, 6, 7,8,9],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i]) + '"></i> ' +
+            grades[i] + ' Quintile <br />';
+    }
+
+    return div;
+};
+
+
 // create map
 geojson = L.geoJson(tablaDeDatos,{
     style: style,
@@ -94,5 +114,4 @@ geojson = L.geoJson(tablaDeDatos,{
 })
 geojson.addTo(map);
 info.addTo(map);
-
-
+legend.addTo(map);
