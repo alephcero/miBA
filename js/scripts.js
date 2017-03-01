@@ -1,4 +1,3 @@
-console.log(tablaDeDatos)
 var geojson;
 
 
