@@ -1,9 +1,25 @@
 #mapContainer {
+    height: 900px;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+}
+
+/*NAVBAR STYLES*/
+.navbar-default {
+    background-color: #403b3b;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #ffffff;
+    color: #403b3b;
+    border-radius: 10px;
 }
 
 .info {
@@ -29,4 +45,12 @@
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+}
+
+.page-header h1{
+    margin: 0 0 0 10px;
+}
+
+.container {
+    width: 100%;
 }
